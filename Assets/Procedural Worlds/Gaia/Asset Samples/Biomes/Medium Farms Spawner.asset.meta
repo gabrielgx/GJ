@@ -1,10 +1,3 @@
-fileFormatVersion: 2
-guid: 5a895c103d05c744891ffe6eba7d276d
-labels:
-- GaiaManagerSpawner
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:e11804b63bd617f521eccc1a1366c365969170baae94ed5150866c2c8691b2b7
+size 211
