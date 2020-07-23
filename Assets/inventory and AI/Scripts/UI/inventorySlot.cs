@@ -22,7 +22,7 @@ namespace FGJ.UI
         [HideInInspector] public int slotIndex;
         [HideInInspector] public item currentItem;
 
-        private void Awake() 
+        private void Start() 
         {
             if(gunSlot)
             {

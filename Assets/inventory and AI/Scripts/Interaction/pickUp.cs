@@ -40,6 +40,13 @@ namespace FGJ.Interaction
                     inRange = false;
                 }
             }
+            if(inRange)
+            {
+                if(Inventory.addItem(O_Item, -1))
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 }

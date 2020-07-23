@@ -16,12 +16,16 @@ namespace FGJ.Core
         private void Awake() 
         {
             instance = this;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         public void openInventory()
         {
             inventoryUI.SetActive(true);
             playerCanMove = false;
             inventaryOpen = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         public void closeInventory()
         {
@@ -34,6 +38,8 @@ namespace FGJ.Core
             inventoryUI.SetActive(false);
             playerCanMove = true;
             inventaryOpen = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }
