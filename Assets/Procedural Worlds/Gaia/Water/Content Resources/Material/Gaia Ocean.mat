@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gaia Ocean
+  m_Shader: {fileID: 4800000, guid: bcb8ab61b454e43759e4aed562a63ef0, type: 3}
+  m_ShaderKeywords: _DETAIL_MULX2 _ENABLEPROBERELFECTIONS_ON _ENABLEREALTIMEREFLECTIONS_ON
+    _NORMALMAP _PW_COVER_OFF _PW_SF_COVER_ON _PW_SF_GLOBAL_CONTROL_ON _PW_SF_SSS_ON
+    _PW_SF_WAVE_PEAK_ON _PW_SSS_OFF
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorDepthRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DataMap:
+        m_Texture: {fileID: 2800000, guid: 895bae0867a7b4c2eb958f5f80d61717, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Foam:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamRampAlpha:
+        m_Texture: {fileID: 2800000, guid: 25c5404bd86c64615a27ddad4d9d0b19, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamTex:
+        m_Texture: {fileID: 2800000, guid: 6ec1b26979090ce44ae90f1a798dd118, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalFadeMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalLayer0:
+        m_Texture: {fileID: 2800000, guid: bde6cb2e213a1a84a9a579bfd2ac765e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalLayer1:
+        m_Texture: {fileID: 2800000, guid: ba8b90b254eca554697a571d28aa6b1c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalLayer2:
+        m_Texture: {fileID: 2800000, guid: ba8b90b254eca554697a571d28aa6b1c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterDepthRamp:
+        m_Texture: {fileID: 2800000, guid: a6579f1ba5aa4f7458912c2c0d40235d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BlendMode: 0
+    - _DstBlend: 10
+    - _EdgeWaterDist: 5
+    - _FadeDistance: 4096
+    - _FadeStart: 128
+    - _FoamDepth: 0.3
+    - _FoamDistance: 0.112
+    - _FoamStrength: 4.66
+    - _FoamTexTile: 256
+    - _Glossiness: 0.5
+    - _Metallic: 0.5
+    - _NormalFadeDistance: 1024
+    - _NormalFadeStart: 256
+    - _NormalLayer0: 2
+    - _NormalLayer0Scale: 0.5
+    - _NormalLayer1: 2
+    - _NormalLayer1Scale: 0.7
+    - _NormalLayer2Scale: 3
+    - _NormalMoveScale: 0.0003
+    - _NormalMoveSpeed: 0.01
+    - _NormalTile: 512
+    - _PW_DstBlend: 0
+    - _PW_SSS: 1
+    - _PW_SSSDistortion: 0.34
+    - _PW_SSSPower: 1
+    - _PW_SrcBlend: 1
+    - _ReflectionDistortion: 1
+    - _ReflectionStrength: 0.2
+    - _RefractionToggle: 0
+    - _RelfectionStrength: 1
+    - _Smoothness: 0.9
+    - _SrcBlend: 5
+    - _TransparentDepth: 9
+    - _TransparentDistance: 1
+    - _TransparentMin: 0
+    - _WaterTexTile: 64
+    - _WaveAmplify: 1.84
+    - _WaveBackwashToggle: 0
+    - _WaveClampToShore: 0.01
+    - _WaveCount: 1024
+    - _WaveDirGlobal: 0
+    - _WaveLength: 1024
+    - _WavePeakToggle: 1
+    - _WaveScale: 1
+    - _WaveShoreClamp: 0.33
+    - _WaveShoreMove: 0.1
+    - _WaveSize: 0.1
+    - _WaveSpeed: 10
+    - _WaveSteepness: 0.1
+    m_Colors:
+    - _AmbientColor: {r: 0.60511786, g: 0.579826, b: 0.61922145, a: 0.7449855}
+    - _Color: {r: 1, g: 0, b: 0, a: 0}
+    - _ColorDeepWater: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeWaterColor: {r: 0.09999997, g: 0.09999997, b: 0.19999996, a: 1}
+    - _MainLightColor: {r: 1.4, g: 1.1586648, b: 0.9971636, a: 1.4}
+    - _MainLightDir: {r: -0, g: 0.70710677, b: 0.7071067, a: 0}
+    - _MainLightFresnel: {r: 0.052643288, g: 0.0726428, b: 0.122641504, a: 1}
+    - _MainLightPos: {r: 0, g: 0, b: 0, a: 0}
+    - _MainLightSpecular: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
+    - _PW_MainLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_MainLightDir: {r: 0, g: -1, b: 0, a: 0}
+    - _PW_MainLightSpecular: {r: 0.09999997, g: 0.09999997, b: 0.09999997, a: 1}
+    - _PW_SSSTint: {r: 1, g: 1, b: 1, a: 1}
+    - _ReflectionColor: {r: 0.1, g: 0.12, b: 0.17, a: 1}
+    - _SkyColor: {r: 0.075204685, g: 0.08340537, b: 0.09433961, a: 1}
+    - _SunLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _WaveA: {r: 0.96, g: 0.84, b: 1.36, a: 0.01}
+    - _WaveB: {r: 1, g: 2.68, b: 0.68, a: 0.09}
+    - _WaveC: {r: 1, g: 1, b: 0.35, a: 0.002}
+    - _WaveDirection: {r: 1, g: 0, b: 0, a: 0}
