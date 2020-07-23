@@ -2,6 +2,8 @@ using UnityEngine;
 using Gamekit3D.Message;
 using System.Collections;
 using Cinemachine;
+using FGJ.Interaction;
+using FGJ.Core;
 using DG.Tweening;
 using UnityEngine.Animations.Rigging;
 
@@ -197,7 +199,7 @@ namespace Gamekit3D
             if (m_Input.Attack && canAttack)
                 if (m_Input.Aim)
                     m_Abilities[0].TriggerAbility();
-                else
+                else if(Manager.instance.playerCanMove && Manager.instance.playerCanAttack)
                     m_Animator.SetTrigger(m_HashMeleeAttack);
 
             if (m_Input.Ability1)
@@ -588,7 +590,10 @@ namespace Gamekit3D
             movement += m_VerticalSpeed * Vector3.up * Time.deltaTime;
 
             // Move the character controller.
-            m_CharCtrl.Move(movement);
+            if(Manager.instance.playerCanMove)
+            {
+                m_CharCtrl.Move(movement);
+            }
 
             // After the movement store whether or not the character controller is grounded.
             m_IsGrounded = m_CharCtrl.isGrounded;
@@ -735,6 +740,46 @@ namespace Gamekit3D
             m_VerticalSpeed = 0f;
             m_Respawning = true;
             m_Damageable.isInvulnerable = true;
+        }
+
+        private void Update() 
+        {
+            if(Input.GetButtonDown("OpenInventory"))
+            {
+                toggleInventory();
+            }
+
+            if(Input.GetButtonDown("Interact"))
+            {
+                if(Manager.instance.playerCanMove)
+                {
+                    interaction();
+                }
+            }
+        }
+
+        public void toggleInventory()
+        {
+            if(!Manager.instance.inventaryOpen)
+            {
+                Manager.instance.openInventory();
+
+            }
+            else
+            {
+                Manager.instance.closeInventory();
+            }
+        }
+
+        public void interaction()
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Physics.Raycast(ray, out hit, 1000f);
+            if(hit.collider.gameObject.GetComponent<iInteraction>() != null)
+            {
+                hit.collider.gameObject.GetComponent<iInteraction>().interact();
+            }
         }
     }
 }

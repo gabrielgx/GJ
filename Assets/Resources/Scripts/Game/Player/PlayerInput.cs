@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using Gamekit3D;
+using FGJ.Core;
 using UnityEngine.InputSystem;
 using Cinemachine;
 
@@ -105,39 +106,42 @@ public class PlayerInput : MonoBehaviour
     }
     void OnMove(InputValue value)
     {
+        if(Manager.instance.playerCanMove)
         m_Movement = value.Get<Vector2>();
     }
     void OnLook(InputValue value)
     {
+        if(Manager.instance.playerCanMove)
         m_Camera = value.Get<Vector2>();
     }
     void OnFire()
     {
-
         if (m_AttackWaitCoroutine != null)
-            StopCoroutine(m_AttackWaitCoroutine);
+        StopCoroutine(m_AttackWaitCoroutine);
 
         m_AttackWaitCoroutine = StartCoroutine(AttackWait());
     }
 
     void OnAim(InputValue value)
     {
+        if(Manager.instance.playerCanMove && Manager.instance.playerCanShot)
         m_Aim = value.isPressed;
     }
 
     void OnJump(InputValue value)
     {
+        if(Manager.instance.playerCanMove)
         m_Jump = value.isPressed;
     }
 
     void OnAbility1(InputValue value)
     {
-
+        if(Manager.instance.playerCanMove)
         m_Ability1 = value.isPressed;
     }
     void OnAbility2(InputValue value)
     {
-
+        if(Manager.instance.playerCanMove)
         m_Ability2 = value.isPressed;
     }
 
