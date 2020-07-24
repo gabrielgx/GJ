@@ -4,7 +4,7 @@ using UnityEngine;
 using Gamekit3D;
 public class ParticleCollisionListener : MonoBehaviour
 {
-    [SerializeField] int damageAmount = 1;
+    public int damageAmount = 1;
     private ParticleSystem part;
     private List<ParticleCollisionEvent> collisionEvents;
 

@@ -10,6 +10,8 @@ namespace FGJ.UI
     {
         private GameObject currentItemSprite;
         [SerializeField] inventory inventoryInstance;
+        [SerializeField] MeleeWeapon meleeWeapon;
+        [SerializeField] ParticleCollisionListener handGun;
         [HideInInspector] public bool usingItem;
         [HideInInspector] public inventorySlot cameFrom;
         [HideInInspector] public inventorySlot usingIn;
@@ -33,6 +35,7 @@ namespace FGJ.UI
                 else
                 {
                     Manager.instance.playerCanShot = true;
+                    handGun.damageAmount = Mathf.RoundToInt((currentItem as equipment).damage);
                 }
             }
             if(meleeSlot)
@@ -44,6 +47,7 @@ namespace FGJ.UI
                 else
                 {
                     Manager.instance.playerCanAttack = true;
+                    meleeWeapon.damage = Mathf.RoundToInt((currentItem as equipment).damage);
                 }
             }
         }
@@ -108,6 +112,7 @@ namespace FGJ.UI
                 else
                 {
                     Manager.instance.playerCanShot = true;
+                    handGun.damageAmount = Mathf.RoundToInt((currentItem as equipment).damage);
                 }
             }
             if(meleeSlot)
@@ -119,6 +124,7 @@ namespace FGJ.UI
                 else
                 {
                     Manager.instance.playerCanAttack = true;
+                    meleeWeapon.damage = Mathf.RoundToInt((currentItem as equipment).damage);
                 }
             }
             /*if(gunSlot)

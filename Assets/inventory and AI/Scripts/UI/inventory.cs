@@ -210,15 +210,15 @@ namespace FGJ.UI
                 itemDescription.text = mouseOverSlot.currentItem.itemDescription;
                 if(mouseOverSlot.currentItem.itemType == item.EItemType.melee)
                 {
-                    itemDescription.text = ODescription + "\nDano: " + (mouseOverSlot.currentItem as equipment).damage + "\nVelocidade: " + (mouseOverSlot.currentItem as equipment).speed;
+                    itemDescription.text = ODescription + "\nDano: " + (mouseOverSlot.currentItem as equipment).damage; //+ "\nVelocidade: " + (mouseOverSlot.currentItem as equipment).speed;
                 }
                 if(mouseOverSlot.currentItem.itemType == item.EItemType.gun)
                 {
-                    itemDescription.text = ODescription + "\nDano: " + (mouseOverSlot.currentItem as equipment).damage + "\nCadência: " + (mouseOverSlot.currentItem as equipment).rateOfFire+ "\nPrecisão " + (mouseOverSlot.currentItem as equipment).rateOfFire;
+                    itemDescription.text = ODescription + "\nDano: " + (mouseOverSlot.currentItem as equipment).damage; //+ "\nCadência: " + (mouseOverSlot.currentItem as equipment).rateOfFire+ "\nPrecisão " + (mouseOverSlot.currentItem as equipment).rateOfFire;
                 }
                 if(mouseOverSlot.currentItem as craftMaterial != null)
                 {
-                    itemDescription.text = ODescription + "\n + " + (mouseOverSlot.currentItem as craftMaterial).iDamage + " Dano\n + " + (mouseOverSlot.currentItem as craftMaterial).iSpeed + " Velocidade\n + " + (mouseOverSlot.currentItem as craftMaterial).iRateOfFire + " Cadência\n + " + (mouseOverSlot.currentItem as craftMaterial).iAcurracy + " Precisão";
+                    itemDescription.text = ODescription + "\n + " + (mouseOverSlot.currentItem as craftMaterial).iDamage + " Dano"; //+ (mouseOverSlot.currentItem as craftMaterial).iSpeed + " Velocidade\n + " + (mouseOverSlot.currentItem as craftMaterial).iRateOfFire + " Cadência\n + " + (mouseOverSlot.currentItem as craftMaterial).iAcurracy + " Precisão";
                 }
             }
             else
