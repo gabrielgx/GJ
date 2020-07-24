@@ -746,7 +746,10 @@ namespace Gamekit3D
         {
             if(Input.GetButtonDown("OpenInventory"))
             {
-                toggleInventory();
+                if(!Manager.instance.pauseMenuOpen)
+                {
+                    toggleInventory();
+                }
             }
 
             if(Input.GetButtonDown("Interact"))
@@ -755,6 +758,11 @@ namespace Gamekit3D
                 {
                     interaction();
                 }
+            }
+
+            if(Input.GetButtonDown("Pause"))
+            {
+                togglePauseMenu();
             }
         }
 
@@ -768,6 +776,26 @@ namespace Gamekit3D
             else
             {
                 Manager.instance.closeInventory();
+            }
+        }
+
+        public void togglePauseMenu()
+        {
+            if(!Manager.instance.pauseMenuOpen)
+            {
+                if(!Manager.instance.inventaryOpen)
+                {
+                    Manager.instance.pauseGame();
+                }
+                else
+                {
+                    Manager.instance.closeInventory();
+                }
+
+            }
+            else
+            {
+                Manager.instance.resumeGame();
             }
         }
 

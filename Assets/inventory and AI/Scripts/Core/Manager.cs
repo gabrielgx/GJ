@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using FGJ.UI;
 using UnityEngine;
 
@@ -11,13 +10,21 @@ namespace FGJ.Core
         [HideInInspector] public bool playerCanMove = true;
         [HideInInspector] public bool playerCanAttack = true;
         [HideInInspector] public bool playerCanShot = true;
+        [SerializeField] bool mainMenu;
         public GameObject inventoryUI;
+        public GameObject pauseMenu;
         [HideInInspector] public bool inventaryOpen;
+        [HideInInspector] public bool pauseMenuOpen;
         private void Awake() 
         {
             instance = this;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            if(mainMenu)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
         public void openInventory()
         {
@@ -40,6 +47,36 @@ namespace FGJ.Core
             inventaryOpen = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+        public void pauseGame()
+        {
+            pauseMenu.SetActive(true);
+            playerCanMove = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            pauseMenuOpen = true;
+            Time.timeScale = 0f;
+        }
+        public void resumeGame()
+        {
+            pauseMenu.SetActive(false);
+            playerCanMove = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            pauseMenuOpen = false;
+            Time.timeScale = 1f;
+        }
+        public void startGame()
+        {
+            SceneManager.LoadScene("Game Jam Test Scene");
+        }
+        public void loadMainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        public void quitGame()
+        {
+            Application.Quit();
         }
     }
 }
