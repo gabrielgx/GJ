@@ -102,7 +102,7 @@ namespace FGJ.UI
             {
                 dragFrom.usingItem = false;
             }
-            if((mouseOverSlot != null && mouseOverSlot.empty && dragFrom != null && !mouseOverSlot.resultSlot && !mouseOverSlot.gunSlot && !mouseOverSlot.meleeSlot) || (mouseOverSlot != null && dragFrom != null && mouseOverSlot == dragFrom.cameFrom) || (mouseOverSlot != null && dragFrom != null && ((mouseOverSlot.gunSlot && dragFrom.currentItem.itemType == item.EItemType.gun) || (mouseOverSlot.meleeSlot && dragFrom.currentItem.itemType == item.EItemType.melee))))
+            if((mouseOverSlot != null && mouseOverSlot.empty && dragFrom != null && !mouseOverSlot.resultSlot && !mouseOverSlot.gunSlot && !mouseOverSlot.meleeSlot) || (mouseOverSlot != null && dragFrom != null && mouseOverSlot == dragFrom.cameFrom) || (mouseOverSlot != null && dragFrom != null && ((mouseOverSlot.gunSlot && dragFrom.currentItem.itemType == item.EItemType.gun) || (mouseOverSlot.meleeSlot && dragFrom.currentItem.itemType == item.EItemType.melee))) && (mouseOverSlot != null && dragFrom != null && mouseOverSlot != dragFrom))
             {
                 if(mouseOverSlot == dragFrom.cameFrom)
                 {

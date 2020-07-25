@@ -33,6 +33,7 @@ namespace FGJ.Core
             instance = this;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            Time.timeScale = 1f;
             if(mainMenu)
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -48,6 +49,11 @@ namespace FGJ.Core
                 dialogUI.GetComponent<dialogUI>().startDialog(0, 5);
             }
             musicTimer = timeBetweenMusics + 1;
+        }
+        private void OnEnable() 
+        {
+            playerCanAttack = false;
+            playerCanShot = false;
         }
         public void openInventory()
         {
@@ -137,7 +143,10 @@ namespace FGJ.Core
                     }
                 }
             }
-            combatTimer += Time.deltaTime;
+            if(!mainMenu)
+            {
+                combatTimer += Time.deltaTime;
+            }
             if(!playerInCombat && combatTimer > 1)
             {
                 if(!autoPlay)
@@ -149,6 +158,7 @@ namespace FGJ.Core
         public void setAutoPlay(bool AutoPlay)
         {
             autoPlay = AutoPlay;
+            musicTimer = timeBetweenMusics + 1;
         }
         public void playMusic()
         {
