@@ -1,4 +1,5 @@
 ﻿using FGJ.UI;
+using Gamekit3D;
 using UnityEngine;
 
 namespace FGJ.Interaction
@@ -9,6 +10,11 @@ namespace FGJ.Interaction
         [HideInInspector] public bool inRange;
         private GameObject player;
         private inventory Inventory;
+        private enum itemTypes
+        {
+            health, item, mission
+        }
+        [SerializeField] private itemTypes itemType;
 
         private void Start() 
         {
@@ -20,9 +26,17 @@ namespace FGJ.Interaction
         {
             if(inRange)
             {
-                if(Inventory.addItem(O_Item, -1))
+                switch(itemType)
                 {
-                    Destroy(gameObject);
+                    case itemTypes.item:
+                        if(Inventory.addItem(O_Item, -1))
+                        {
+                            Destroy(gameObject);
+                        }
+                    break;
+                    case itemTypes.health:
+                        player.GetComponent<Damageable>().heal(1);
+                    break;
                 }
             }
         }

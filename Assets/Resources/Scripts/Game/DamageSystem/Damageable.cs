@@ -110,6 +110,15 @@ namespace Gamekit3D
             }
         }
 
+        public void heal(int healAmount)
+        {
+            if(currentHitPoints != maxHitPoints)
+            {
+                currentHitPoints += healAmount;
+                OnReceiveDamage.Invoke();
+            }
+        }
+
         void LateUpdate()
         {
             if (schedule != null)

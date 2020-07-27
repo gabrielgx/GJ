@@ -136,7 +136,6 @@ public class PlayerInput : MonoBehaviour
 
     void OnAbility1(InputValue value)
     {
-        if(Manager.instance.playerCanMove)
         m_Ability1 = value.isPressed;
     }
     void OnAbility2(InputValue value)
